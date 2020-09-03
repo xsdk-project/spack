@@ -19,6 +19,7 @@ class Petsc(Package):
     version('develop', branch='master')
     version('xsdk-0.2.0', tag='xsdk-0.2.0')
 
+    version('3.14.0', branch='master')
     version('3.13.4', sha256='8d470cba1ceb9638694550134a2f23aac85ed7249cb74992581210597d978b94')
     version('3.13.3', sha256='dc744895ee6b9c4491ff817bef0d3abd680c5e3c25e601be44240ce65ab4f337')
     version('3.13.2', sha256='6083422a7c5b8e89e5e4ccf64acade9bf8ab70245e25bca3a3da03caf74602f1')
@@ -231,7 +232,7 @@ class Petsc(Package):
     depends_on('scalapack', when='+mumps')
     depends_on('trilinos@12.6.2:+mpi', when='@3.7.0:+trilinos+mpi')
     depends_on('trilinos@xsdk-0.2.0+mpi', when='@xsdk-0.2.0+trilinos+mpi')
-    depends_on('trilinos@develop+mpi', when='@xdevelop+trilinos+mpi')
+    depends_on('trilinos@develop+mpi', when='@develop+trilinos+mpi')
     depends_on('fftw+mpi', when='+fftw+mpi')
     depends_on('suite-sparse', when='+suite-sparse')
     depends_on('libx11', when='+X')

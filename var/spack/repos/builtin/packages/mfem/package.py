@@ -44,6 +44,7 @@ class Mfem(Package):
     # 'develop' is a special version that is always larger (or newer) than any
     # other version.
     version('develop', branch='master')
+    version('4.2.0-xsdk', branch='master')
 
     version('4.1.0',
             '4c83fdcf083f8e2f5b37200a755db843cdb858811e25a8486ad36b2cbec0e11d',

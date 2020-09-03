@@ -18,6 +18,7 @@ class Tasmanian(CMakePackage):
     maintainers = ['mkstoyanov']
 
     version('develop', branch='master')
+    version('7.2', branch='master')
 
     version('7.1', sha256='9c24a591506a478745b802f1fa5c557da7bc80b12d8070855de6bc7aaca7547a')
     version('7.0', sha256='4094ba4ee2f1831c575d00368c8471d3038f813398be2e500739cef5c7c4a47b')  # use for xsdk-0.5.0

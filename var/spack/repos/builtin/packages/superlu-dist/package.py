@@ -18,6 +18,7 @@ class SuperluDist(CMakePackage):
 
     version('develop', branch='master')
     version('xsdk-0.2.0', tag='xsdk-0.2.0')
+    version('7.0-xsdk', branch='master')
     version('6.3.1', sha256='3787c2755acd6aadbb4d9029138c293a7570a2ed228806676edcc7e1d3f5a1d3')
     version('6.3.0', sha256='daf3264706caccae2b8fd5a572e40275f1e128fa235cb7c21ee2f8051c11af95')
     version('6.2.0', sha256='15ad1badd81b41e37941dd124d06d3b92e51c4f0ff532ad23fb09c4ebfe6eb9e')

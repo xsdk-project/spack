@@ -15,6 +15,7 @@ class PyLibensemble(PythonPackage):
     git      = "https://github.com/Libensemble/libensemble.git"
 
     version('develop', branch='develop')
+    version('0.8.0-xsdk', branch='develop')
     version('0.7.0', sha256='4c3c16ef3d4750b7a54198fae5d7ae402c5f5411ae85189da41afd20e20027dc')
     version('0.6.0', sha256='3f6a926d3868da53835ed93fc2e2a047b368dacb648c7608ee3a66debcee4d38')
     version('0.5.2', sha256='3e36c29a4a2adc0984ecfcc998cb5bb8a2cdfbe7a1ae92f7b35b06e41d21b889')
