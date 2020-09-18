@@ -17,7 +17,7 @@ class Datatransferkit(CMakePackage):
     maintainers = ['Rombur']
 
     version('master', branch='master', submodules=True)
-    version('3.2', branch='master', submodules=True)
+    version('3.1-rc2', tag='3.1-rc2', submodules=True)
 
     variant('openmp', default=False, description='enable OpenMP backend')
     variant('serial', default=True, description='enable Serial backend (default)')

@@ -72,7 +72,7 @@ class Xsdk(BundlePackage):
     depends_on('trilinos@xsdk-0.2.0+hypre+superlu-dist+metis+hdf5~mumps+boost~suite-sparse~tpetra~ifpack2~zoltan2~amesos2~exodus',
                when='@xsdk-0.2.0 +trilinos')
 
-    depends_on('datatransferkit@3.2', when='@0.6.0 +trilinos +datatransferkit')
+    depends_on('datatransferkit@3.1-rc2', when='@0.6.0 +trilinos +datatransferkit')
 
     depends_on('petsc +trilinos', when='+trilinos')
     depends_on('petsc ~trilinos', when='~trilinos')
