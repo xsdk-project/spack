@@ -38,6 +38,7 @@ class Xsdk(BundlePackage):
     variant('precice', default=(sys.platform != 'darwin'),
             description='Enable precice package build')
     variant('butterflypack', default=True, description='Enable butterflypack package build')
+    variant('heffte', default=True, description='Enable heffte package build')
 
     depends_on('hypre@develop+superlu-dist+shared', when='@develop')
     depends_on('hypre@2.20-xsdk+superlu-dist+shared', when='@0.6.0')
@@ -118,8 +119,8 @@ class Xsdk(BundlePackage):
     depends_on('sundials@3.2.1~int64+hypre', when='@0.4.0')
     depends_on('sundials@3.1.0~int64+hypre', when='@0.3.0')
 
-    depends_on('plasma@19.8.1:', when='@develop %gcc@6.0:')
-    depends_on('plasma@19.8.1:', when='@0.6.0 %gcc@6.0:')
+    depends_on('plasma@20.9.20:', when='@develop %gcc@6.0:')
+    depends_on('plasma@20.9.20:', when='@0.6.0 %gcc@6.0:')
     depends_on('plasma@19.8.1:', when='@0.5.0 %gcc@6.0:')
     depends_on('plasma@18.11.1:', when='@0.4.0 %gcc@6.0:')
 
@@ -203,6 +204,9 @@ class Xsdk(BundlePackage):
     depends_on('butterflypack@master', when='@develop +butterflypack')
     depends_on('butterflypack@1.3.0-xsdk', when='@0.6.0 +butterflypack')
     depends_on('butterflypack@1.1.0', when='@0.5.0 +butterflypack')
+
+    depends_on('heffte@develop+fftw', when='@develop +heffte')
+    depends_on('heffte@1.0+fftw', when='@0.6.0 +heffte')
 
     # xSDKTrilinos depends on the version of Trilinos built with
     # +tpetra which is turned off for faster xSDK
