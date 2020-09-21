@@ -16,6 +16,7 @@ class Heffte(CMakePackage):
     maintainers = ['mkstoyanov']
 
     version('develop', branch='master')
+    version('1.1-xsdk', branch='master')
     version('1.0', sha256='0902479fb5b1bad01438ca0a72efd577a3529c3d8bad0028f3c18d3a4935ca74')
     version('0.2', sha256='4e76ae60982b316c2e873b2e5735669b22620fefa1fc82f325cdb6989bec78d1')
     version('0.1', sha256='d279a03298d2dc76574b1ae1031acb4ea964348cf359273d1afa4668b5bfe748')
