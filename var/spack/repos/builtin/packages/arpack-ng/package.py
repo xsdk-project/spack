@@ -39,7 +39,6 @@ class ArpackNg(Package):
     git      = 'https://github.com/opencollab/arpack-ng.git'
 
     version('develop', branch='master')
-    version('3.7.1-xsdk', commit='01297eee88e9ddebc9d3dd1fcd19aa2c127ec761') #master sep-23-2020
     version('3.7.0', sha256='972e3fc3cd0b9d6b5a737c9bf6fd07515c0d6549319d4ffb06970e64fa3cc2d6')
     version('3.6.3', sha256='64f3551e5a2f8497399d82af3076b6a33bf1bc95fc46bbcabe66442db366f453')
     version('3.6.2', sha256='673c8202de996fd3127350725eb1818e534db4e79de56d5dcee8c00768db599a')
