@@ -41,7 +41,7 @@ class Xsdk(BundlePackage):
     variant('heffte', default=True, description='Enable heffte package build')
 
     depends_on('hypre@develop+superlu-dist+shared', when='@develop')
-    depends_on('hypre@2.20-xsdk+superlu-dist+shared', when='@0.6.0')
+    depends_on('hypre@2.20.0+superlu-dist+shared', when='@0.6.0')
     depends_on('hypre@2.18.2+superlu-dist+shared', when='@0.5.0')
     depends_on('hypre@2.15.1~internal-superlu', when='@0.4.0')
     depends_on('hypre@2.12.1~internal-superlu', when='@0.3.0')
