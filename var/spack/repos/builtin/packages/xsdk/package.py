@@ -163,8 +163,8 @@ class Xsdk(BundlePackage):
     tasmanian_openmp = '~openmp' if sys.platform == 'darwin' else '+openmp'
     depends_on('tasmanian@develop+xsdkflags+blas' + tasmanian_openmp, when='@develop')
     depends_on('tasmanian@develop+xsdkflags+blas+cuda+magma' + tasmanian_openmp, when='@develop +cuda')
-    depends_on('tasmanian@7.2+xsdkflags+mpi+blas' + tasmanian_openmp, when='@0.6.0')
-    depends_on('tasmanian@7.2+xsdkflags+mpi+blas+cuda+magma' + tasmanian_openmp, when='@0.6.0 +cuda')
+    depends_on('tasmanian@7.3+xsdkflags+mpi+blas' + tasmanian_openmp, when='@0.6.0')
+    depends_on('tasmanian@7.3+xsdkflags+mpi+blas+cuda+magma' + tasmanian_openmp, when='@0.6.0 +cuda')
     depends_on('tasmanian@7.0+xsdkflags+mpi+blas' + tasmanian_openmp, when='@0.5.0')
     depends_on('tasmanian@7.0+xsdkflags+mpi+blas+cuda+magma' + tasmanian_openmp, when='@0.5.0 +cuda')
     depends_on('tasmanian@6.0+xsdkflags+blas~openmp', when='@0.4.0')
