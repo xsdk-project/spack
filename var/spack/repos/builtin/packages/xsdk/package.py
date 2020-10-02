@@ -131,8 +131,8 @@ class Xsdk(BundlePackage):
 
     depends_on('amrex@develop', when='@develop %intel')
     depends_on('amrex@develop', when='@develop %gcc')
-    depends_on('amrex@20.10-xsdk', when='@0.6.0 %intel')
-    depends_on('amrex@20.10-xsdk', when='@0.6.0 %gcc')
+    depends_on('amrex@20.10', when='@0.6.0 %intel')
+    depends_on('amrex@20.10', when='@0.6.0 %gcc')
     depends_on('amrex@19.08', when='@0.5.0 %intel')
     depends_on('amrex@19.08', when='@0.5.0 %gcc')
     depends_on('amrex@18.10.1', when='@0.4.0 %intel')
