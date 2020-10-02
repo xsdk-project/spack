@@ -76,7 +76,7 @@ class Xsdk(BundlePackage):
     depends_on('datatransferkit@3.1-rc2', when='@0.6.0 +trilinos +datatransferkit')
 
     depends_on('petsc +trilinos', when='+trilinos')
-    depends_on('petsc ~trilinos', when='~trilinos')
+    depends_on('petsc +cuda', when='+cuda @0.6.0:')
     depends_on('petsc +batch', when='platform=cray @0.5.0:')
     depends_on('petsc@develop+mpi+hypre+superlu-dist+metis+hdf5~mumps+double~int64',
                when='@develop')
