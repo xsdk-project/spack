@@ -54,7 +54,7 @@ class Xsdk(BundlePackage):
     depends_on('mfem@3.3.2+mpi+superlu-dist+petsc+sundials+examples+miniapps', when='@0.3.0')
 
     depends_on('superlu-dist@develop', when='@develop')
-    depends_on('superlu-dist@7.0-xsdk', when='@0.6.0')
+    depends_on('superlu-dist@6.3.2-xsdk', when='@0.6.0')
     depends_on('superlu-dist@6.1.1', when='@0.5.0')
     depends_on('superlu-dist@6.1.0', when='@0.4.0')
     depends_on('superlu-dist@5.2.2', when='@0.3.0')
@@ -124,8 +124,8 @@ class Xsdk(BundlePackage):
     depends_on('plasma@19.8.1:', when='@0.5.0 %gcc@6.0:')
     depends_on('plasma@18.11.1:', when='@0.4.0 %gcc@6.0:')
 
-    depends_on('magma@2.5.3', when='@develop +cuda')
-    depends_on('magma@2.5.3', when='@0.6.0 +cuda')
+    depends_on('magma@2.5.4', when='@develop +cuda')
+    depends_on('magma@2.5.4', when='@0.6.0 +cuda')
     depends_on('magma@2.5.1', when='@0.5.0 +cuda')
     depends_on('magma@2.4.0', when='@0.4.0 +cuda')
     depends_on('magma@2.2.0', when='@0.3.0 +cuda')
