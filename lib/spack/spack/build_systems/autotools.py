@@ -212,7 +212,12 @@ class AutotoolsPackage(PackageBase):
                            .format(self.compiler.cc_pic_flag),
                            libtool_path)
         if self.spec.satisfies('%fj'):
-            fs.filter_file(r'/\S*/fjhpctag.o', '', libtool_path)
+            fs.filter_file('-nostdlib', '', libtool_path)
+            rehead = r'/\S*/'
+            objfile = ['fjcrt0.o', 'fjlang08.o', 'fjomp.o',
+                       'crti.o', 'crtbeginS.o', 'crtendS.o']
+            for o in objfile:
+                fs.filter_file(rehead + o, '', libtool_path)
 
     @property
     def configure_directory(self):
@@ -261,13 +266,18 @@ class AutotoolsPackage(PackageBase):
             # This line is what is needed most of the time
             # --install, --verbose, --force
             autoreconf_args = ['-ivf']
-            for dep in spec.dependencies(deptype='build'):
-                if os.path.exists(dep.prefix.share.aclocal):
-                    autoreconf_args.extend([
-                        '-I', dep.prefix.share.aclocal
-                    ])
+            autoreconf_args += self.autoreconf_search_path_args
             autoreconf_args += self.autoreconf_extra_args
             m.autoreconf(*autoreconf_args)
+
+    @property
+    def autoreconf_search_path_args(self):
+        """Arguments to autoreconf to modify the search paths"""
+        search_path_args = []
+        for dep in self.spec.dependencies(deptype='build'):
+            if os.path.exists(dep.prefix.share.aclocal):
+                search_path_args.extend(['-I', dep.prefix.share.aclocal])
+        return search_path_args
 
     @run_after('autoreconf')
     def set_configure_or_die(self):
