@@ -17,7 +17,6 @@ class Datatransferkit(CMakePackage):
     maintainers = ['Rombur']
 
     version('master', branch='master', submodules=True)
-    version('3.1-rc2', tag='3.1-rc2', submodules=True)
 
     variant('openmp', default=False, description='enable OpenMP backend')
     variant('serial', default=True, description='enable Serial backend (default)')
@@ -25,9 +24,8 @@ class Datatransferkit(CMakePackage):
             description='enable the build of shared lib')
 
     depends_on('cmake', type='build')
-    depends_on('trilinos+intrepid2+shards~dtk', when='+serial')
-    depends_on('trilinos+intrepid2+shards+openmp~dtk', when='+openmp')
-    depends_on('trilinos@13:13.99', when='@3.2')
+    depends_on('trilinos@develop+intrepid2+shards~dtk', when='+serial')
+    depends_on('trilinos@develop+intrepid2+shards+openmp~dtk', when='+openmp')
 
     def cmake_args(self):
         spec = self.spec
