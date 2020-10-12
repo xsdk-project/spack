@@ -124,7 +124,7 @@ class Xsdk(BundlePackage):
     depends_on('plasma@19.8.1:', when='@0.5.0 %gcc@6.0:')
     depends_on('plasma@18.11.1:', when='@0.4.0 %gcc@6.0:')
 
-    depends_on('magma@2.5.1', when='@develop +cuda')
+    depends_on('magma@2.5.3', when='@develop +cuda')
     depends_on('magma@2.5.3', when='@0.6.0 +cuda')
     depends_on('magma@2.5.1', when='@0.5.0 +cuda')
     depends_on('magma@2.4.0', when='@0.4.0 +cuda')
@@ -147,7 +147,7 @@ class Xsdk(BundlePackage):
     depends_on('omega-h +trilinos', when='+trilinos +omega-h')
     depends_on('omega-h ~trilinos', when='~trilinos +omega-h')
     depends_on('omega-h@develop', when='@develop +omega-h')
-    depends_on('omega-h@9.30.0-xsdk', when='@0.6.0 +omega-h')
+    depends_on('omega-h@9.32.5', when='@0.6.0 +omega-h')
     depends_on('omega-h@9.29.0', when='@0.5.0 +omega-h')
     depends_on('omega-h@9.19.1', when='@0.4.0 +omega-h')
 
@@ -198,7 +198,7 @@ class Xsdk(BundlePackage):
 
     depends_on('precice ~petsc', when='platform=cray +precice')
     depends_on('precice@develop', when='@develop +precice')
-    depends_on('precice@2.1.0', when='@0.6.0 +precice')
+    depends_on('precice@2.1.1', when='@0.6.0 +precice')
     depends_on('precice@1.6.1', when='@0.5.0 +precice')
 
     depends_on('butterflypack@master', when='@develop +butterflypack')
