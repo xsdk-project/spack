@@ -186,8 +186,8 @@ class Xsdk(BundlePackage):
 
     depends_on('ginkgo@develop ~openmp', when='@develop +ginkgo')
     depends_on('ginkgo@develop ~openmp+cuda', when='@develop +ginkgo +cuda')
-    depends_on('ginkgo@1.3.0-xsdk ~openmp', when='@0.6.0 +ginkgo')
-    depends_on('ginkgo@1.3.0-xsdk ~openmp+cuda', when='@0.6.0 +cuda +ginkgo')
+    depends_on('ginkgo@1.3.0 ~openmp', when='@0.6.0 +ginkgo')
+    depends_on('ginkgo@1.3.0 ~openmp+cuda', when='@0.6.0 +cuda +ginkgo')
     depends_on('ginkgo@1.1.0 ~openmp', when='@0.5.0 +ginkgo')
     depends_on('ginkgo@1.1.0 ~openmp+cuda', when='@0.5.0 +cuda +ginkgo')
 
