@@ -157,7 +157,7 @@ class Xsdk(BundlePackage):
     depends_on('strumpack@3.1.1', when='@0.4.0 +strumpack')
 
     depends_on('pumi@develop', when='@develop')
-    depends_on('pumi@2.3.0-xsdk', when='@0.6.0')
+    depends_on('pumi@2.2.3', when='@0.6.0')
     depends_on('pumi@2.2.1', when='@0.5.0')
     depends_on('pumi@2.2.0', when='@0.4.0')
 
