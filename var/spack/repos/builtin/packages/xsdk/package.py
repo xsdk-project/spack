@@ -202,7 +202,7 @@ class Xsdk(BundlePackage):
     depends_on('precice@1.6.1', when='@0.5.0 +precice')
 
     depends_on('butterflypack@master', when='@develop +butterflypack')
-    depends_on('butterflypack@1.3.0-xsdk', when='@0.6.0 +butterflypack')
+    depends_on('butterflypack@1.2.1', when='@0.6.0 +butterflypack')
     depends_on('butterflypack@1.1.0', when='@0.5.0 +butterflypack')
 
     depends_on('heffte +fftw+cuda+magma', when='+cuda')
