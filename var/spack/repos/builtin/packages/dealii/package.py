@@ -305,7 +305,7 @@ class Dealii(CMakePackage, CudaPackage):
             self.define(
                 'LAPACK_INCLUDE_DIRS', lapack_blas_headers.directories
             ),
-            self.define('LAPACK_LIBRARIES', lapack_blas_libs),
+            self.define('LAPACK_LIBRARIES', lapack_blas_libs.joined(';')),
             self.define('UMFPACK_DIR', spec['suite-sparse'].prefix),
             self.define('ZLIB_DIR', spec['zlib'].prefix),
             self.define('DEAL_II_ALLOW_BUNDLED', False)
@@ -499,7 +499,7 @@ class Dealii(CMakePackage, CudaPackage):
                 self.define(
                     'SCALAPACK_INCLUDE_DIRS', spec['scalapack'].prefix.include
                 ),
-                self.define('SCALAPACK_LIBRARIES', scalapack_libs)
+                self.define('SCALAPACK_LIBRARIES', scalapack_libs.joined(';'))
             ])
 
         # Open Cascade
