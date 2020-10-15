@@ -18,7 +18,7 @@ class Pflotran(AutotoolsPackage):
     maintainers = ['ghammond86', 'balay']
 
     version('develop')
-    version('xsdk-0.6.0', commit='a539035d6d464f282483ab446db0e84647dede82')
+    version('xsdk-0.6.0', commit='46e14355c1827c057f2e1b3e3ae934119ab023b2')
     version('xsdk-0.5.0', commit='98a959c591b72f73373febf5f9735d2c523b4c20')
     version('xsdk-0.4.0', commit='c851cbc94fc56a32cfdb0678f3c24b9936a5584e')
     version('xsdk-0.3.0', branch='release/xsdk-0.3.0')
