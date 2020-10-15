@@ -369,6 +369,7 @@ class Trilinos(CMakePackage):
     conflicts('+parmetis', when='~mpi')
     conflicts('+pnetcdf', when='~mpi')
 
+    patch('trilinos-slu.patch', when='@13.0.0')
     patch('umfpack_from_suitesparse.patch', when='@11.14.1:12.8.1')
     patch('xlf_seacas.patch', when='@12.10.1:12.12.1 %xl')
     patch('xlf_seacas.patch', when='@12.10.1:12.12.1 %xl_r')
