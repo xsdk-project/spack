@@ -195,7 +195,7 @@ class Xsdk(BundlePackage):
     depends_on('ginkgo@1.1.0 ~openmp+cuda', when='@0.5.0 +cuda +ginkgo')
 
     depends_on('py-libensemble@develop+petsc4py', type='run', when='@develop +libensemble')
-    depends_on('py-libensemble@0.8.0-xsdk+petsc4py', type='run', when='@0.6.0 +libensemble')
+    depends_on('py-libensemble@0.7.1-xsdk+petsc4py', type='run', when='@0.6.0 +libensemble')
     depends_on('py-libensemble@0.5.2+petsc4py', type='run', when='@0.5.0 +libensemble')
     depends_on('py-petsc4py@3.12.0', type='run', when='@0.5.0 +libensemble')
 
