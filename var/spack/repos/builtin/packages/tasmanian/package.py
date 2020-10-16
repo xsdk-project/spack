@@ -18,7 +18,6 @@ class Tasmanian(CMakePackage):
     maintainers = ['mkstoyanov']
 
     version('develop', branch='master')
-    version('7.2', branch='master')
 
     version('7.3', sha256='5bd1dd89cc5c84506f6900b6569b17e50becd73eb31ec85cfa11d6f1f912c4fa')
     version('7.1', sha256='9c24a591506a478745b802f1fa5c557da7bc80b12d8070855de6bc7aaca7547a')
