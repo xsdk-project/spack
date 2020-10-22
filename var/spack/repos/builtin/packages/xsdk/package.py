@@ -91,7 +91,7 @@ class Xsdk(BundlePackage):
     depends_on('petsc@xsdk-0.2.0+mpi+hypre+superlu-dist+metis+hdf5~mumps+double~int64',
                when='@xsdk-0.2.0')
 
-    depends_on('dealii +trilinos', when='+trilinos +dealii')
+    depends_on('dealii +trilinos~adol-c', when='+trilinos +dealii')
     depends_on('dealii ~trilinos', when='~trilinos +dealii')
     depends_on('dealii@develop~assimp~python~doc~gmsh+petsc+slepc+mpi~int64+hdf5~netcdf+metis~sundials~ginkgo~symengine', when='@develop +dealii')
     depends_on('dealii@9.2.0~assimp~python~doc~gmsh+petsc+slepc+mpi~int64+hdf5~netcdf+metis~sundials~ginkgo~symengine', when='@0.6.0 +dealii')
