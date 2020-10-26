@@ -179,14 +179,12 @@ class Xsdk(BundlePackage):
     # This will be fixed once the new concretizer becomes available
     # (says @adamjstewart)
 
-    if sys.platform == 'darwin':
-        depends_on('phist~openmp', when='+phist')
     depends_on('phist kernel_lib=tpetra', when='+trilinos +phist')
     depends_on('phist kernel_lib=petsc', when='~trilinos +phist')
     depends_on('phist@develop ~fortran ~scamac ~host', when='@develop +phist')
-    depends_on('phist@1.9.2 ~fortran ~scamac ~host ~int64', when='@0.6.0 +phist')
-    depends_on('phist@1.8.0 ~fortran ~scamac ~host ~int64', when='@0.5.0 +phist')
-    depends_on('phist@1.7.5 ~fortran ~scamac ~host ~int64', when='@0.4.0 +phist')
+    depends_on('phist@1.9.2 ~fortran ~scamac ~openmp ~host ~int64', when='@0.6.0 +phist')
+    depends_on('phist@1.8.0 ~fortran ~scamac ~openmp ~host ~int64', when='@0.5.0 +phist')
+    depends_on('phist@1.7.5 ~fortran ~scamac ~openmp ~host ~int64', when='@0.4.0 +phist')
 
     depends_on('ginkgo@develop ~openmp', when='@develop +ginkgo')
     depends_on('ginkgo@develop ~openmp+cuda', when='@develop +ginkgo +cuda')
