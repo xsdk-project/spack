@@ -372,7 +372,7 @@ class Sundials(CMakePackage):
                 '-DSUPERLUDIST_LIBRARY_DIR=%s'
                 % spec['superlu-dist'].prefix.lib,
                 '-DSUPERLUDIST_LIBRARIES=%s'
-                % spec['blas'].libs,
+                % spec['blas'].libs.joined(';'),
                 '-DSUPERLUDIST_OpenMP=%s'
                 % on_off('^superlu-dist+openmp')
             ])
