@@ -39,6 +39,7 @@ class Xsdk(BundlePackage):
             description='Enable precice package build')
     variant('butterflypack', default=True, description='Enable butterflypack package build')
     variant('heffte', default=True, description='Enable heffte package build')
+    variant('slate', default=True, description='Enable slate package build')
 
     depends_on('hypre@develop+superlu-dist+shared', when='@develop')
     depends_on('hypre@2.20.0+superlu-dist+shared', when='@0.6.0')
@@ -210,6 +211,9 @@ class Xsdk(BundlePackage):
     depends_on('heffte +fftw+cuda+magma', when='+cuda')
     depends_on('heffte@develop+fftw', when='@develop +heffte')
     depends_on('heffte@2.0.0+fftw', when='@0.6.0 +heffte')
+
+    depends_on('slate@2020.10.00 ~cuda', when='~cuda +slate %gcc@6.0:')
+    depends_on('slate@2020.10.00 +cuda', when='+cuda +slate %gcc@6.0:')
 
     # xSDKTrilinos depends on the version of Trilinos built with
     # +tpetra which is turned off for faster xSDK
