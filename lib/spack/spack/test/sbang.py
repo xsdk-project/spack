@@ -23,18 +23,21 @@ from spack.util.executable import which
 
 short_line        = "#!/this/is/short/bin/bash\n"
 long_line         = "#!/this/" + ('x' * 200) + "/is/long\n"
+
 lua_line          = "#!/this/" + ('x' * 200) + "/is/lua\n"
 lua_in_text       = ("line\n") * 100 + "lua\n" + ("line\n" * 100)
 lua_line_patched  = "--!/this/" + ('x' * 200) + "/is/lua\n"
+
 node_line         = "#!/this/" + ('x' * 200) + "/is/node\n"
 node_in_text      = ("line\n") * 100 + "lua\n" + ("line\n" * 100)
 node_line_patched = "//!/this/" + ('x' * 200) + "/is/node\n"
-sbang_line        = '#!/bin/bash %s/bin/sbang\n' % spack.store.layout.root
+
 php_line         = "#!/this/" + ('x' * 200) + "/is/php\n"
 php_in_text      = ("line\n") * 100 + "php\n" + ("line\n" * 100)
 php_line_patched = "<?php #!/this/" + ('x' * 200) + "/is/php\n"
 php_line_patched2 = "?>\n"
-sbang_line        = '#!/bin/bash %s/bin/sbang\n' % spack.store.layout.root
+
+sbang_line        = '#!/bin/sh %s/bin/sbang\n' % spack.store.layout.root
 last_line         = "last!\n"
 
 
@@ -178,7 +181,7 @@ def test_shebang_handles_non_writable_files(script_dir):
     assert oct(not_writable_mode) == oct(st.st_mode)
 
 
-def check_sbang():
+def check_sbang_installation():
     sbang_path = sbang.sbang_install_path()
     sbang_bin_dir = os.path.dirname(sbang_path)
     assert sbang_path.startswith(spack.store.layout.root)
@@ -201,7 +204,7 @@ def test_install_sbang(install_mockery):
     assert not os.path.exists(sbang_bin_dir)
 
     sbang.install_sbang()
-    check_sbang()
+    check_sbang_installation()
 
     # put an invalid file in for sbang
     fs.mkdirp(sbang_bin_dir)
@@ -209,8 +212,8 @@ def test_install_sbang(install_mockery):
         f.write("foo")
 
     sbang.install_sbang()
-    check_sbang()
+    check_sbang_installation()
 
     # install again and make sure sbang is still fine
     sbang.install_sbang()
-    check_sbang()
+    check_sbang_installation()
