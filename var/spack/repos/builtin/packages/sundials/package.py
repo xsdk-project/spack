@@ -207,7 +207,7 @@ class Sundials(CMakePackage):
     patch('test_nvector_parhyp.patch', when='@2.7.0:3.0.0')
     patch('FindPackageMultipass.cmake.patch', when='@5.0.0')
     patch('0001-support-superlu-dist-6.3.patch', when='@5.4.0')
-    patch('0001-dont-use-NULL-in-ltest-for-Hypre.patch', when='@5.5.0')
+    patch('5.5.0-xsdk-patches.patch', when='@5.5.0')
 
     # ==========================================================================
     # SUNDIALS Settings
@@ -370,7 +370,8 @@ class Sundials(CMakePackage):
         # Building with SuperLU_DIST
         if '+superlu-dist' in spec:
             args.extend([
-                '-DOPENMP_ENABLE=ON',
+                '-DOPENMP_ENABLE=%s'
+                % on_off('^superlu-dist+openmp'),
                 '-DSUPERLUDIST_ENABLE=ON',
                 '-DSUPERLUDIST_INCLUDE_DIR=%s'
                 % spec['superlu-dist'].prefix.include,
