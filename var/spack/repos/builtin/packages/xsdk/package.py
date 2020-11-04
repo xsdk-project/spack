@@ -19,10 +19,10 @@ class Xsdk(CMakePackage):
 
     maintainers = ['balay', 'luszczek']
 
-    version('develop',             
-             tag = 'v0.1.0')
-    version('0.6.0', 
-             tag = 'v0.1.0')
+    version('develop',
+             tag = 'master')
+    version('0.6.0',
+             branch = 'master')
     version('0.5.0')
     version('0.4.0')
     version('0.3.0')
