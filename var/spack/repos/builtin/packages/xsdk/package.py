@@ -81,7 +81,7 @@ class Xsdk(BundlePackage):
     depends_on('petsc +batch', when='platform=cray @0.5.0:')
     depends_on('petsc@develop+mpi+hypre+superlu-dist+metis+hdf5~mumps+double~int64',
                when='@develop')
-    depends_on('petsc@3.14.0+mpi+hypre+superlu-dist+metis+hdf5~mumps+double~int64',
+    depends_on('petsc@3.14.1+mpi+hypre+superlu-dist+metis+hdf5~mumps+double~int64',
                when='@0.6.0')
     depends_on('petsc@3.12.1+mpi+hypre+superlu-dist+metis+hdf5~mumps+double~int64',
                when='@0.5.0')
