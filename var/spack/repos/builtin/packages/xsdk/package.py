@@ -8,18 +8,21 @@ from spack import *
 import sys
 
 
-class Xsdk(BundlePackage):
+class Xsdk(CMakePackage):
     """Xsdk is a suite of Department of Energy (DOE) packages for numerical
        simulation. This is a Spack bundle package that installs the xSDK
        packages
     """
 
     homepage = "http://xsdk.info"
+    git      = 'https://github.com/xsdk-project/xsdk-examples.git'
 
     maintainers = ['balay', 'luszczek']
 
-    version('develop')
-    version('0.6.0')
+    version('develop',             
+             tag = 'v0.1.0')
+    version('0.6.0', 
+             tag = 'v0.1.0')
     version('0.5.0')
     version('0.4.0')
     version('0.3.0')
@@ -214,6 +217,26 @@ class Xsdk(BundlePackage):
 
     depends_on('slate@2020.10.00 ~cuda', when='~cuda +slate %gcc@6.0:')
     depends_on('slate@2020.10.00 +cuda', when='+cuda +slate %gcc@6.0:')
+
+    #Now build the xsdk-examples on top of all of the dependices
+    def cmake_args(self):
+        spec = self.spec
+        args = [
+            '-DCMAKE_C_COMPILER=%s' % spec['mpi'].mpicc,
+            '-DMPI_DIR=%s' % spec['mpi'].prefix,
+            '-DSUNDIALS_DIR=%s'     % spec['sundials'].prefix,
+            '-DPETSC_DIR=%s'         % spec['petsc'].prefix,
+            '-DPETSC_INCLUDE_DIR=%s' % spec['petsc'].prefix.include,
+            '-DPETSC_LIBRARY_DIR=%s' % spec['petsc'].prefix.lib,
+            '-DSUPERLUDIST_INCLUDE_DIR=%s' %
+            spec['superlu-dist'].prefix.include,
+            '-DSUPERLUDIST_LIBRARY_DIR=%s' % spec['superlu-dist'].prefix.lib,
+        ]
+        if 'trilinos' in spec:
+            args.extend([
+                '-DTRILINOS_DIR:PATH=%s' % spec['trilinos'].prefix,
+            ])
+        return args
 
     # xSDKTrilinos depends on the version of Trilinos built with
     # +tpetra which is turned off for faster xSDK
