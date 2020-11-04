@@ -116,7 +116,7 @@ class Xsdk(BundlePackage):
     depends_on('sundials +cuda', when='+cuda @0.6.0:')
     depends_on('sundials +trilinos', when='+trilinos @0.6.0:')
     depends_on('sundials@develop~int64+hypre+petsc+superlu-dist', when='@develop')
-    depends_on('sundials@5.4.0~int64+hypre+petsc+superlu-dist', when='@0.6.0')
+    depends_on('sundials@5.5.0~int64+hypre+petsc+superlu-dist', when='@0.6.0')
     depends_on('sundials@5.0.0~int64+hypre+petsc+superlu-dist', when='@0.5.0')
     depends_on('sundials@3.2.1~int64+hypre', when='@0.4.0')
     depends_on('sundials@3.1.0~int64+hypre', when='@0.3.0')
