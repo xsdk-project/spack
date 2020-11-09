@@ -209,7 +209,7 @@ class Xsdk(BundlePackage):
     depends_on('butterflypack@1.1.0', when='@0.5.0 +butterflypack')
 
     depends_on('heffte +fftw+cuda+magma', when='+cuda +heffte')
-    depends_on('openmpi@4.0.5 +cuda', when='+cuda +heffte')
+    depends_on('openmpi +cuda', when='+cuda +heffte')
     depends_on('heffte@develop+fftw', when='@develop +heffte')
     depends_on('heffte@2.0.0+fftw', when='@0.6.0 +heffte')
 
