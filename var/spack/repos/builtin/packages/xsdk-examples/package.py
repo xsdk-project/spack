@@ -16,7 +16,7 @@ class XsdkExamples(CMakePackage):
 
     maintainers = ['acfisher', 'balay', 'balos1', 'luszczek']
 
-    version('0.2.0', branch='master')
+    version('0.2.0', branch='reorganize-cmake')
     version('0.1.0', sha256='d24cab1db7c0872b6474d69e598df9c8e25d254d09c425fb0a6a8d6469b8018f')
 
     depends_on('xsdk@0.6.0', when='@0.2.0')
@@ -28,6 +28,7 @@ class XsdkExamples(CMakePackage):
             '-DCMAKE_C_COMPILER=%s' % spec['mpi'].mpicc,
             '-DMPI_DIR=%s' % spec['mpi'].prefix,
             '-DMFEM_DIR=%s' % spec['mfem'].prefix,
+            '-DHYPRE_DIR=%s' % spec['hypre'].prefix,
             '-DSUNDIALS_DIR=%s'     % spec['sundials'].prefix,
             '-DPETSC_DIR=%s'         % spec['petsc'].prefix,
             '-DPETSC_INCLUDE_DIR=%s' % spec['petsc'].prefix.include,
